@@ -15,10 +15,12 @@
     <script src="dist/ml-lodlive.complete.js"></script>
 
     <!-- this is now just a customized options object, might make sense to just pass it in as part of init rather then with the constructor -->
-    <script src="js/profile/profile.example.js"></script>
+    <script src="js/profile/profile.marklogic.js"></script>
     <script>
       'use strict';
-      jQuery('#graph').lodlive({ profile: ExampleProfile, firstUri: 'http://dbpedia.org/resource/Will_Smith', ignoreBnodes: true }); // 'http://dbpedia.org/resource/Philadelphia_Flyers'
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
+      jQuery('#graph').lodlive({ profile: MarkLogicProfile, firstUri: params.iri || 'http://dbpedia.org/resource/Will_Smith', ignoreBnodes: true }); // 'http://dbpedia.org/resource/Philadelphia_Flyers'
     </script>
   </body>
 </html>

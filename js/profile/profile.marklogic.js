@@ -15,7 +15,9 @@ MarkLogicProfile.connection = {
       inverseSameAs : 'SELECT DISTINCT * WHERE {{?object <http://www.w3.org/2002/07/owl#sameAs> <{URI}> } UNION { ?object <http://www.w3.org/2004/02/skos/core#exactMatch> <{URI}>}}'
     },
     // endpoint : "http://localhost:8321/lodlive.xqy",
-    endpoint : 'http://lodlive-ml1:8040/lodlive.xqy',
+    //endpoint : 'http://lodlive-ml1:8040/lodlive.xqy',
+    endpoint : '/v1/graphs/sparql',
+    accepts : 'application/sparql-results+json',
     description : {
       en : 'MarkLogic LodLive'
     }
@@ -209,6 +211,6 @@ MarkLogicProfile.UI = {
 };
 
 MarkLogicProfile.endpoints = {
-  all : 'output=json&format=json&timeout=0',
-  jsonp: true
+  all : '',//'output=json&format=json&timeout=0',
+  jsonp: false
 };
