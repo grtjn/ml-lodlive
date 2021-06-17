@@ -644,8 +644,7 @@
     // deduplicate
     .filter(function(value, index, self) {
       return self.indexOf(value) === index;
-    })
-    .join('\n');
+    })[0];
 
     // TODO: early return?
     if (uris.length == 0 && values.length == 0) {
